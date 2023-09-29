@@ -1,4 +1,4 @@
-package com.fluffynow.api.cargo;
+package br.com.fluffynow.api.cargo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.fluffynow.api.cargo;
+package br.com.fluffynow.api.empresa;
 
 import java.util.List;
 
@@ -13,74 +13,74 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/cargo")
-public class CargoController {
+@RequestMapping("/empresa")
+public class EmpresaController {
 	
 	@Autowired
-	private CargoRepository cargoRepository;
+	private EmpresaRepository empresaRepository;
 	
 	@GetMapping("/list")
-    public List<Cargo> list(){
-		List<Cargo> cargos= null; 
+    public List<Empresa> list(){
+		List<Empresa> Empresas= null; 
 		try {
-			cargos = cargoRepository.findAll();
+			Empresas = empresaRepository.findAll();
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 		
-        return cargos;
+        return Empresas;
     }
 	
 	@PostMapping("/")
-	public Cargo savePaciente(@RequestBody Cargo cargo){
+	public Empresa savePaciente(@RequestBody Empresa empresa){
 		try {
-			cargo = cargoRepository.save(cargo);
+			empresa = empresaRepository.save(empresa);
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
-		return cargo; 
+		return empresa; 
 	}
 	
 	@GetMapping("/{id}")
-    public Cargo getPacienteById(@PathVariable("id") Long id){
-		Cargo cargo = null; 
+    public Empresa getPacienteById(@PathVariable("id") Long id){
+		Empresa empresa = null; 
 		try {
-			cargo = cargoRepository.getReferenceById(id);
+			empresa = empresaRepository.getReferenceById(id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-        return cargo; 
+        return empresa; 
     }
 	
 	@PutMapping("/{id}")
-	public Cargo editPaciente(@PathVariable("id") Long id,
-			@RequestBody Cargo cargo) {
-		Cargo cargoEdit = null; 
+	public Empresa editPaciente(@PathVariable("id") Long id,
+			@RequestBody Empresa empresa) {
+		Empresa empresaEdit = null; 
 		try {
-			cargoRepository.save(cargo);
-			cargoEdit = cargoRepository.getReferenceById(cargo.getIdCargo());
+			empresaRepository.save(empresa);
+			empresaEdit = empresaRepository.getReferenceById(empresa.getIdEmpresa());
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		return cargoEdit; 
+		return empresaEdit; 
 	}
 	
 	@DeleteMapping("/{id}")
-	public Cargo deletePaciente(@PathVariable("id") Long id) {
-		Cargo cargo = null; 
+	public Empresa deletePaciente(@PathVariable("id") Long id) {
+		Empresa empresa = null; 
 		try{
-			cargo = cargoRepository.getReferenceById(id);
-			cargoRepository.deleteById(id);
+			empresa = empresaRepository.getReferenceById(id);
+			empresaRepository.deleteById(id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 
-        return cargo; 
+        return empresa; 
 	}
 }

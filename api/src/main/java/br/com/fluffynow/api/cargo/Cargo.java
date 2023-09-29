@@ -1,6 +1,4 @@
-package com.fluffynow.api.cargo;
-
-import java.math.BigDecimal;
+package br.com.fluffynow.api.cargo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -20,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "cargo")
+@Table(name = "cargo") 
 public class Cargo {
 	
 	@Id
@@ -33,8 +31,5 @@ public class Cargo {
 	
 	@jakarta.persistence.Column(name="descricao")
 	private String descricao; 
-	
-	@jakarta.persistence.Column(name="salario")
-	private BigDecimal salario; 
 	
 }
