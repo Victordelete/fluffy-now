@@ -1,11 +1,15 @@
 package br.com.fluffynow.api.cargo;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import br.com.fluffynow.api.funcionario.Funcionario;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +26,7 @@ import lombok.Setter;
 public class Cargo {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@jakarta.persistence.Column(name="idCargo")
 	private Long idCargo;
 	
@@ -30,6 +34,10 @@ public class Cargo {
 	private String nome; 
 	
 	@jakarta.persistence.Column(name="descricao")
-	private String descricao; 
+	private String descricao;
+	
+	@JsonBackReference
+	@OneToMany(mappedBy="cargo")
+	private List<Funcionario> funcionarios;
 	
 }

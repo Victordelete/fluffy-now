@@ -27,7 +27,7 @@ import lombok.Setter;
 public class RegPonto {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@jakarta.persistence.Column(name="idRegPonto")
 	private Long idRegPonto;
 	
@@ -41,6 +41,6 @@ public class RegPonto {
 	private String distancia;
 	
 	@ManyToOne
-	@JoinColumn(name="idFuncionario", nullable=false)
+	@JoinColumn(name="id_funcionario", nullable=false)
 	private Funcionario funcionario;
 }

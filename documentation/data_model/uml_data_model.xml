@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<DIAGRAMA ID="1" TIPO="tpLogico" UniversalUnicID="B8E-A5-33E1-A7-42EB-ED-2B">
+<DIAGRAMA ID="1" TIPO="tpLogico" UniversalUnicID="EFD8-DB-C9FF-67-F944-4C-82">
     <InfoDiagrama ID="1">
         <Versao Valor="3.2.0"/>
         <Autores/>
@@ -336,7 +336,7 @@
         </Constraints>
     </Tabela>
     <Tabela ID="7">
-        <Bounds Height="237" Left="285" Top="220" Width="150"/>
+        <Bounds Height="215" Left="285" Top="220" Width="150"/>
         <DisablePainted Valor="false"/>
         <Texto>funcionarios</Texto>
         <Observacao/>
@@ -413,16 +413,6 @@
                 <Unique Valor="false"/>
             </Campo>
             <Campo>
-                <Texto>empresa</Texto>
-                <Tipo>INTEGER</Tipo>
-                <Complemento/>
-                <Dicionario/>
-                <Observacao/>
-                <Key Valor="false"/>
-                <Fkey Valor="true"/>
-                <Unique Valor="false"/>
-            </Campo>
-            <Campo>
                 <Texto>departamento</Texto>
                 <Tipo>INTEGER</Tipo>
                 <Complemento/>
@@ -475,7 +465,7 @@
                 <DdlOnUpdate/>
                 <DdlOnDelete/>
                 <LigacaoParaOrigem ID="-1"/>
-                <ConstraintOrigem CamposDestino="[5, 6, 7]" CamposOrigem="[-1, -1, -1]" ID="-1,-1"/>
+                <ConstraintOrigem CamposDestino="[-1, 5, 6]" CamposOrigem="[-1, -1, -1]" ID="-1,-1"/>
             </Constraint>
         </Constraints>
     </Tabela>
@@ -607,14 +597,14 @@
         <Largura Valor="1"/>
         <Ligacoes PontaA="5" PontaB="7"/>
         <Pontos>
-            <Ponto Left="701" Top="98"/>
+            <Ponto Left="700" Top="98"/>
             <Ponto Left="710" Top="98"/>
             <Ponto Left="710" Top="182"/>
             <Ponto Left="408" Top="182"/>
             <Ponto Left="408" Top="216"/>
         </Pontos>
         <LogicoCardinalidade ID="30">
-            <Bounds Height="14" Left="711" Top="86" Width="35"/>
+            <Bounds Height="14" Left="710" Top="86" Width="35"/>
             <DisablePainted Valor="false"/>
             <Texto>Cardinalidade_1</Texto>
             <Observacao/>
@@ -685,54 +675,6 @@
             <Ancorado Valor="false"/>
             <TamanhoAutmatico Valor="true"/>
             <Card Valor="3"/>
-            <MovimentacaoManual Valor="false"/>
-            <Papel Valor=""/>
-            <Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
-        </LogicoCardinalidade>
-    </LogicoLinha>
-    <LogicoLinha ID="37">
-        <DisablePainted Valor="false"/>
-        <Tag LinhaMestre="-1"/>
-        <Dashed Valor="false"/>
-        <Ancorado Valor="false"/>
-        <TemSetaPontaA Valor="false"/>
-        <TemSetaPontaB Valor="true"/>
-        <SetaAberta Valor="true"/>
-        <SetaLargura Valor="10"/>
-        <Inteligente Valor="true"/>
-        <SetaAutomatica Valor="true"/>
-        <Largura Valor="1"/>
-        <Ligacoes PontaA="2" PontaB="7"/>
-        <Pontos>
-            <Ponto Left="184" Top="159"/>
-            <Ponto Left="233" Top="159"/>
-            <Ponto Left="233" Top="336"/>
-            <Ponto Left="281" Top="336"/>
-        </Pontos>
-        <LogicoCardinalidade ID="38">
-            <Bounds Height="14" Left="194" Top="147" Width="35"/>
-            <DisablePainted Valor="false"/>
-            <Texto>Cardinalidade_5</Texto>
-            <Observacao/>
-            <Dicionario/>
-            <Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
-            <Ancorado Valor="false"/>
-            <TamanhoAutmatico Valor="true"/>
-            <Card Valor="0"/>
-            <MovimentacaoManual Valor="false"/>
-            <Papel Valor=""/>
-            <Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
-        </LogicoCardinalidade>
-        <LogicoCardinalidade ID="39">
-            <Bounds Height="14" Left="242" Top="324" Width="35"/>
-            <DisablePainted Valor="false"/>
-            <Texto>Cardinalidade_6</Texto>
-            <Observacao/>
-            <Dicionario/>
-            <Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
-            <Ancorado Valor="false"/>
-            <TamanhoAutmatico Valor="true"/>
-            <Card Valor="1"/>
             <MovimentacaoManual Valor="false"/>
             <Papel Valor=""/>
             <Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
