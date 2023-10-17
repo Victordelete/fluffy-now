@@ -1,1 +1,83 @@
-<p>empresa works!</p>
+<div class="cadastroEmpresa">
+  <form id="add-form" class="formPadding" (ngSubmit)="saveEmpresaFunc(myForm)" #myForm="ngForm" novalidate>
+
+    <h5 class="card-header">Adicionar Empresa</h5>
+
+    <div class="form-group form-Step">
+      <label for="formName">Nome Social</label>
+      <input type="text" [(ngModel)]="empresa.nomeSocial" name="nomeSocial" class="form-control" id="formName"
+        placeholder="Nome Social da empresa.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formDescricao">Nome Fantasia</label>
+      <input type="text" [(ngModel)]="empresa.nomeFantasia" name="nomeFantasia" class="form-control" id="formName"
+        placeholder="Nome Fantasia da empresa.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formDescricao">CNPJ</label>
+      <input type="text" [(ngModel)]="empresa.cnpj" name="cnpj" class="form-control" id="formName"
+        placeholder="CNPJ da empresa">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formDescricao">Inscrição Estadual</label>
+      <input type="text" [(ngModel)]="empresa.insEstadual" name="insEstadual" class="form-control" id="formName"
+        placeholder="Inscrição Estadual da empresa">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formRamo">Ramo</label>
+      <input type="text" [(ngModel)]="empresa.ramo" name="ramo" class="form-control" id="formName"
+        placeholder="Ramo da empresa">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formEndereco">Endereco</label>
+      <input type="text" [(ngModel)]="empresa.endereco" name="endereco" class="form-control" id="formName"
+        placeholder="Endereco da empresa">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formLocalizacao">Localização</label>
+      <input type="text" [(ngModel)]="empresa.localizacao" name="localizacao" class="form-control" id="formName"
+        placeholder="Localização da empresa">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg form-Step">
+      Salvar
+    </button>
+  </form>
+
+</div>
+
+<div class="listaEmpresa formPadding">
+  <h5 class="card-header">Listar Empresas</h5>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nº Empresa</th>
+        <th>Nome Social</th>
+        <th>Nome Fantasia</th>
+        <th>CNPJ</th>
+        <th>Inscrição Estadual</th>
+        <th>Ramo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let empresa of empresas; let i = index">
+        <td>{{ empresa.idEmpresa}}.</td>
+        <td>{{ empresa.nomeSocial }}</td>
+        <td>{{ empresa.nomeFantasia }}</td>
+        <td>{{ empresa.cnpj }}</td>
+        <td>{{ empresa.insEstadual }}</td>
+        <td>{{ empresa.ramo }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-primary btn-lg form-Step" (click)="getEmpresas()">Atualizar</button>
+</div>

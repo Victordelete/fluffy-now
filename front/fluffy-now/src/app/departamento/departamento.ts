@@ -1,5 +1,8 @@
+import { Empresa } from "../empresa/empresa";
+
 export interface Departamento {
-  pk_paciente: number;
+  idDepartamento: number;
   nome: string;
   descricao: string;
+  empresa: Empresa;
 }

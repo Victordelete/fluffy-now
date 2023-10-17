@@ -1,8 +1,7 @@
 .menuSuperior{
   height: 10%;
   padding-left: 1%;
-
-  background-color: #4b114b;
+  background-color: #6b76b5;
 }
 
 button{
@@ -11,18 +10,31 @@ button{
 }
 
 button:hover{
-  background-color: #380138;
-  border: 1px solid #380138;
+  background-color: #444b72;
+  border: 1px solid #444b72;
 }
 
 .menuLateral {
   width: 100%;
   height: 90%;
   border: 1px solid #afabab;
-
-  padding-left: 1%;
 }
 
 .mat-menu{
   width: 15%;
+}
+
+.menu-item{
+  color: black;
+}
+
+.item-sel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-sel:hover{
+  background-color: #ff9100b3;
+  border-radius: 5px;
 }

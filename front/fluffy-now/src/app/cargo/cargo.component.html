@@ -1,1 +1,47 @@
-<p>cargo works!</p>
+<div class="cadastroCargo">
+  <form id="add-form" class="formPadding" (ngSubmit)="saveCargoFunc(myForm)" #myForm="ngForm" novalidate>
+
+    <h5 class="card-header">Adicionar Cargo</h5>
+
+    <div class="form-group form-Step">
+      <label for="formName">Nome</label>
+      <input type="text" [(ngModel)]="cargo.nome" name="nome" class="form-control" id="formName"
+        placeholder="Nome do cargo">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formDescricao">Descrição</label>
+      <input type="text" [(ngModel)]="cargo.descricao" name="descricao" class="form-control" id="formName"
+        placeholder="Descrição do cargo">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg form-Step">
+      Salvar
+    </button>
+  </form>
+
+</div>
+
+<div class="listaCargo formPadding">
+  <h5 class="card-header">Listar Cargos</h5>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nº Cargo</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let cargo of cargos; let i = index">
+        <td>{{ cargo.idCargo}}.</td>
+        <td>{{ cargo.nome }}</td>
+        <td>{{ cargo.descricao }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-primary btn-lg form-Step" (click)="getCargos()">Atualizar</button>
+</div>
