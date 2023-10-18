@@ -1,1 +1,56 @@
-<p>reg-ponto works!</p>
+<div class="cadastroFuncionario">
+  <form id="add-form" class="formPadding" (ngSubmit)="saveRegPontoFunc(myForm)" #myForm="ngForm" novalidate>
+
+    <h5 class="card-header">Adicionar Funcionário</h5>
+
+    <div class="form-group form-Step">
+      <label for="formDataPonto">Data do ponto</label>
+      <input type="text" [(ngModel)]="regPonto.dataPonto" name="dataPonto" class="form-control" id="formDataPonto"
+        placeholder="Data registro do ponto.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formLocal">Local do Ponto</label>
+      <input type="text" [(ngModel)]="regPonto.local" name="nome" class="form-control" id="formLocal"
+        placeholder="Local do ponto.">
+    </div>
+
+
+    <div class="form-group form-Step">
+      <label for="formIdFuncionario">Funcionario</label>
+      <input type="text" [(ngModel)]="funcionario.idFuncionario" name="idFuncionario" class="form-control" id="formIdFuncionario"
+        placeholder="Id do Funcionario do ponto.">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg form-Step">
+      Salvar
+    </button>
+  </form>
+
+</div>
+
+<div class="listaFuncionario formPadding">
+  <h5 class="card-header">Listar Funcionários</h5>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nº ponto</th>
+        <th>Data do Ponto</th>
+        <th>local</th>
+        <th>Nome Funcionario</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let regPonto of regPontos; let i = index">
+        <td>{{ regPonto.idRegPonto}}.</td>
+        <td>{{ regPonto.dataPonto }}</td>
+        <td>{{ regPonto.local }}</td>
+        <td>{{ regPonto.funcionario.nome }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-primary btn-lg form-Step" (click)="getRegPontos()">Atualizar</button>
+</div>

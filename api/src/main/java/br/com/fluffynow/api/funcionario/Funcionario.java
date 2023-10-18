@@ -1,7 +1,7 @@
 package br.com.fluffynow.api.funcionario;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -46,7 +46,7 @@ public class Funcionario {
 	private BigDecimal salario;
 	
 	@jakarta.persistence.Column(name="dataNascimento")
-	private Date dataNascimento;
+	private LocalDate dataNascimento;
 	
 	@ManyToOne
 	@JoinColumn(name="id_cargo", nullable=false)

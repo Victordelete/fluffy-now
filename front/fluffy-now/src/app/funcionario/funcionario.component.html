@@ -1,1 +1,79 @@
-<p>funcionario works!</p>
+<div class="cadastroFuncionario">
+  <form id="add-form" class="formPadding" (ngSubmit)="saveFuncionarioFunc(myForm)" #myForm="ngForm" novalidate>
+
+    <h5 class="card-header">Adicionar Funcionário</h5>
+
+    <div class="form-group form-Step">
+      <label for="formName">Nome</label>
+      <input type="text" [(ngModel)]="funcionario.nome" name="nome" class="form-control" id="formNome"
+        placeholder="Nome do funcionário.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formDescricao">CPF</label>
+      <input type="text" [(ngModel)]="funcionario.cpf" name="cpf" class="form-control" id="formCpf"
+        placeholder="Cpf do funcionário.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formDataNascimento">Data Nascimento</label>
+      <input type="text" [(ngModel)]="funcionario.data_nascimento" name="data_nascimento" class="form-control" id="formDataNascimento"
+        placeholder="Data nascimento do funcionário.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formSalario">Salario</label>
+      <input type="text" [(ngModel)]="funcionario.salario" name="salario" class="form-control" id="formSalario"
+        placeholder="Salario do funcionário.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formIdDepartamento">Departamento</label>
+      <input type="text" [(ngModel)]="departamento.idDepartamento" name="idDepartamento" class="form-control" id="formDepartamento"
+        placeholder="Id do Departamento do funcionário.">
+    </div>
+
+    <div class="form-group form-Step">
+      <label for="formIdCargo">Cargo</label>
+      <input type="text" [(ngModel)]="cargo.idCargo" name="idCargo" class="form-control" id="formCargo"
+        placeholder="Id do Cargo do funcionário.">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg form-Step">
+      Salvar
+    </button>
+  </form>
+
+</div>
+
+<div class="listaFuncionario formPadding">
+  <h5 class="card-header">Listar Funcionários</h5>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nº Funcionario</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Data Nascimento</th>
+        <th>Salário</th>
+        <th>Nome Departamento</th>
+        <th>Nome Cargo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let funcionario of funcionarios; let i = index">
+        <td>{{ funcionario.idFuncionario}}.</td>
+        <td>{{ funcionario.nome }}</td>
+        <td>{{ funcionario.cpf }}</td>
+        <td>{{ funcionario.data_nascimento}}</td>
+        <td>{{ funcionario.salario }}</td>
+        <td>{{ funcionario.departamento.nome }}</td>
+        <td>{{ funcionario.cargo.nome }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-primary btn-lg form-Step" (click)="getFuncionarios()">Atualizar</button>
+</div>
