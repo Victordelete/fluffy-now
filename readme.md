@@ -12,7 +12,11 @@ Inicialmente montou-se um modelo de negócio para a solução implementada. Levo
 
 ![Modelo de dados](documentation/data_model/uml_data_model.png)
 
-Foi utilizado SGBD PostgreSQL para persistência dos dados 
+A implementação foi realizada em PostgreSQL, sem criação de modelo próprio em SQL, utilizando criação/integração do Hibernate para que a estruturação seja realizada. 
+
+## Backend - API
+
+A integração web utilizada por meio de API desenvolvida em JAVA SpringBoot. Esta API segue padrão REST para os acessos. A principio não foi configurado métodos de validação de acesso para se manter a simplicidade do projeto. 
 
 ### Métodos
 Requisições para a API devem seguir os padrões:
@@ -24,25 +28,29 @@ Requisições para a API devem seguir os padrões:
 | `PUT` | Atualiza dados de um registro ou altera sua situação. |
 | `DELETE` | Remove um registro do sistema. |
 
-## Banco de Dados
+Todos as entidades a princípio possuem essas quatro operações, mesmo que a princípio não tenha sido implementados as integrações em frontend com usuário.
 
-Neste projeto optou-se pela gestão de dados utilizando PostgreSQL. O modelo de dados foram implementados em linguagem SQl, e acrescidos em um script .sql. Este script pode ser acionado por meio de um programa de implementação em Python para sua instalação. 
+Testes utilizando Imnsonia geraram modelo de comunicação simplificado, justamento com conjunto de testes de acesso. 
 
-As tabelas geradas são: 
+## Frontend - Interação usuário
 
-* Contato. 
-* Endereço. 
-* Funcionário. 
-* Guia de Atendimento.
-* Hospital. 
-* Paciente. 
+Os administradores do sistema devem ser capaz de cadastrar, listar e editar o conjunto de dados armazenados para a solução. Desta forma, foi criado sistema de apresentação das informações e inserções, utilizando Angular/typescript. 
 
-As tabelas de Pacientes e Funcionários compartilham de informações armazenadas para Contato e Endereço.
+Os componentes angular foram criados utilizando um padrão de inserção e listagem, para agilizar o tempo de implementação. Foram criados interfaces para os modelos de dados padrão. 
 
-## Testes
+Seguem imagens da interface criada:
 
-A principio não forma implementados testes automatizados para o projeto, ficando a cargo somente de testes diretos realizados utilizando dados de amostra. Requisições testadas com o Postman. 
+![Component Home](front/img/home.png)
 
+![Component Empresa](front/img/empresa.png)
+
+![Component Cargo](front/img/cargo.png)
+
+![Component Departamento](front/img/departamento.png)
+
+Nesta imagem o menu lateral é desabilitado. 
+
+![Component Departamento](front/img/departamento2.png)
 
 
  
