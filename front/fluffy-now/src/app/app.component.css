@@ -1,17 +1,22 @@
 .menuSuperior{
   height: 10%;
   padding-left: 1%;
-  background-color: #6b76b5;
+  background-color: #3d3d3dad;
 }
 
 button{
-  background-color: #ff9100;
-  border: 1px solid #ff9100;
+  background-color: #eb25a2;
+  border: 1px solid #eb25a2;
 }
 
 button:hover{
-  background-color: #444b72;
-  border: 1px solid #444b72;
+  background-color: #eb25a294;
+  border: 1px solid #eb25a294;
+}
+
+button:active{
+  background-color: #eb25a294;
+  border: 1px solid #eb25a294;
 }
 
 .menuLateral {
@@ -35,6 +40,6 @@ button:hover{
 }
 
 .item-sel:hover{
-  background-color: #ff9100b3;
+  background-color: #e947adb1;
   border-radius: 5px;
 }

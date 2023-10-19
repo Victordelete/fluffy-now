@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { RegPonto } from './regPonto';
 import { RegPontoService } from './reg-ponto.service';
-import { Departamento } from '../departamento/departamento';
-import { Cargo } from '../cargo/cargo';
 
 import { NgForm } from '@angular/forms';
 import { Funcionario } from '../funcionario/funcionario';

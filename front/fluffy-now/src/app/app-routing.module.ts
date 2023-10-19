@@ -31,6 +31,11 @@ const routes: Routes = [
   {
     path: "regPonto",
     component: RegPontoComponent
+  },
+
+  {
+    path: "home",
+    component: HomeComponent
   }
 
 ];
